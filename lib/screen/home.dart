@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -16,20 +16,23 @@ class _HomeState extends State<Home> {
               height: MediaQuery.of(context).size.height,
               child: Image.asset("asset/img/home_background.jpg",
                   fit: BoxFit.fill)),
-          ListView.builder(
-              itemCount: 8,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child:
-                          Image.asset("asset/img/DButt.jpg", fit: BoxFit.cover),
+          Padding(
+            padding: const EdgeInsets.all(30),
+            child: ListView.builder(
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset("asset/img/DButt.jpg",
+                            fit: BoxFit.cover),
+                      ),
                     ),
-                  ),
-                );
-              }),
+                  );
+                }),
+          ),
         ],
       )),
     );
