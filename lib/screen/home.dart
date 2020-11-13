@@ -37,34 +37,32 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Stack(
-        children: [
-          Container(
-              height: MediaQuery.of(context).size.height,
-              child: Image.asset("asset/img/home_background.jpg",
-                  fit: BoxFit.fill)),
-          Padding(
-            padding: const EdgeInsets.all(30),
-            child: ListView.builder(
-                itemCount: _mainMenu.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () => _openPage(_mainMenu[index].widget),
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 15),
-                      child: Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Image.asset(_mainMenu[index].assetPath,
-                              fit: BoxFit.cover),
-                        ),
+          body: Stack(children: [
+        Container(
+            height: MediaQuery.of(context).size.height,
+            child:
+                Image.asset("asset/img/home_background.jpg", fit: BoxFit.fill)),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: ListView.builder(
+              itemCount: _mainMenu.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () => _openPage(_mainMenu[index].widget),
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 15),
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(_mainMenu[index].assetPath,
+                            fit: BoxFit.cover),
                       ),
                     ),
-                  );
-                }),
-          ),
-        ],
-      )),
+                  ),
+                );
+              }),
+        ),
+      ])),
     );
   }
 }
