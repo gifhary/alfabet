@@ -8,18 +8,30 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+    return SafeArea(
+      child: Scaffold(
+          body: Stack(
+        children: [
+          Container(
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset("asset/img/home_background.jpg",
+                  fit: BoxFit.fill)),
+          ListView.builder(
+              itemCount: 8,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child:
+                          Image.asset("asset/img/DButt.jpg", fit: BoxFit.cover),
+                    ),
+                  ),
+                );
+              }),
+        ],
+      )),
     );
   }
 }
