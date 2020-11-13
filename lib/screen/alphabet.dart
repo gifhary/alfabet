@@ -9,7 +9,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Hahaha"),
+      body: Center(child: Text("Hahaha")),
     );
   }
 }
