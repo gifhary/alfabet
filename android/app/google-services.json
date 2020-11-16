@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "827829507969",
+    "firebase_url": "https://my-idea-bb627.firebaseio.com",
+    "project_id": "my-idea-bb627",
+    "storage_bucket": "my-idea-bb627.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827829507969:android:b9d1526cc0459799a43a80",
+        "android_client_info": {
+          "package_name": "com.example.myidea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827829507969-5f27ls9qg6kop4av84cnku08utlr48l9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCReXcItwPocII5URsh9ThUVgdeF4ur9aU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827829507969-5f27ls9qg6kop4av84cnku08utlr48l9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-9519016034319045~4426610842"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827829507969:android:62763c98d5befceca43a80",
+        "android_client_info": {
+          "package_name": "com.pengangguranz.alfabet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827829507969-5f27ls9qg6kop4av84cnku08utlr48l9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCReXcItwPocII5URsh9ThUVgdeF4ur9aU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827829507969-5f27ls9qg6kop4av84cnku08utlr48l9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
