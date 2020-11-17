@@ -14,16 +14,29 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     //main menu list is here mutha fukka
     _mainMenu = [
+      //menu 0
       MainMenu(
           title: "Alfabet",
           assetPath: "asset/img/DButt.jpg",
           widget: AlphabetScreen()),
-      MainMenu(title: "Obyek", assetPath: "asset/img/DButt.jpg")
+      //menu 1
+      MainMenu(
+        title: "Objek",
+        assetPath: "asset/img/DButt.jpg",
+        widget: null,
+      ),
+      MainMenu(
+        title: "Kuis",
+        assetPath: "asset/img/DButt.jpg",
+        widget: null,
+      )
+      //add more menu as you wish
     ];
 
     super.initState();
   }
 
+//open the widget page contained in the menu
   void _openPage(Widget widget) {
     if (widget != null) {
       Navigator.push(context,
@@ -41,14 +54,21 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
         Container(
             height: MediaQuery.of(context).size.height,
-            child: Image.asset("asset/img/home_background.jpg", fit: BoxFit.fill)),
+            //background image home page
+            child:
+                Image.asset("asset/img/home_background.jpg", fit: BoxFit.fill)),
+
+        //Menu list view
         Padding(
           padding: const EdgeInsets.all(30),
           child: ListView.builder(
               itemCount: _mainMenu.length,
               itemBuilder: (context, index) {
                 return GestureDetector(
+                  //function on tap each menu
                   onTap: () => _openPage(_mainMenu[index].widget),
+
+                  //menu content e.g image in menu
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 15),
                     child: Card(
