@@ -19,17 +19,17 @@ class _HomeScreenState extends State<HomeScreen> {
       //menu 0
       MainMenu(
           title: "Alfabet",
-          assetPath: "asset/img/DButt.jpg",
+          assetPath: "assets/img/DButt.jpg",
           widget: AlphabetScreen()),
       //menu 1
       MainMenu(
         title: "Objek",
-        assetPath: "asset/img/DButt.jpg",
+        assetPath: "assets/img/DButt.jpg",
         widget: ObjectScreen(),
       ),
       MainMenu(
         title: "Kuis",
-        assetPath: "asset/img/DButt.jpg",
+        assetPath: "assets/img/DButt.jpg",
         widget: QuizScreen(),
       )
       //add more menu as you wish
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: MediaQuery.of(context).size.height,
             //background image home page
             child:
-                Image.asset("asset/img/home_background.jpg", fit: BoxFit.fill)),
+                Image.asset("assets/img/home_background.jpg", fit: BoxFit.fill)),
 
         //Menu list view
         Padding(
