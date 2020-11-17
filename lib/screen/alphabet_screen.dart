@@ -43,47 +43,57 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: GridView.builder(
-          shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-          ),
-          itemCount: _alphabet.length,
-          itemBuilder: (context, index) {
-            return GridTile(
-                child: GestureDetector(
-              onTap: () => _playVoiceOver(_alphabet[index].name),
-              child: Center(
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    ShaderMask(
-                      child: Image.asset("assets/img/balloon.png"),
-                      shaderCallback: (bounds) {
-                        Random random = new Random();
-
-                        return LinearGradient(
-                          colors: [
-                            Colors.blue,
-                            _colors[random.nextInt(_colors.length)]
-                          ],
-                          stops: [0.0, 0.0],
-                        ).createShader(bounds);
-                      },
-                      blendMode: BlendMode.srcATop,
-                    ),
-                    Image.asset("assets/img/balloon_fx.png"),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Text(_alphabet[index].name),
-                    ),
-                  ],
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+                height: MediaQuery.of(context).size.height,
+                child: Image.asset("assets/img/alphabet_background.gif",
+                    fit: BoxFit.fill)),
+            Center(
+              child: GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
                 ),
+                itemCount: _alphabet.length,
+                itemBuilder: (context, index) {
+                  return GridTile(
+                      child: GestureDetector(
+                    onTap: () => _playVoiceOver(_alphabet[index].name),
+                    child: Center(
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          ShaderMask(
+                            child: Image.asset("assets/img/balloon.png"),
+                            shaderCallback: (bounds) {
+                              Random random = new Random();
+
+                              return LinearGradient(
+                                colors: [
+                                  Colors.blue,
+                                  _colors[random.nextInt(_colors.length)]
+                                ],
+                                stops: [0.0, 0.0],
+                              ).createShader(bounds);
+                            },
+                            blendMode: BlendMode.srcATop,
+                          ),
+                          Image.asset("assets/img/balloon_fx.png"),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8.0),
+                            child: Text(_alphabet[index].name),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ));
+                },
               ),
-            ));
-          },
+            ),
+          ],
         ),
       ),
     );
