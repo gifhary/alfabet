@@ -1,7 +1,7 @@
 import 'package:alfabet/constructor/main_menu.dart';
-import 'package:alfabet/screen/alphabet.dart';
-import 'package:alfabet/screen/object.dart';
-import 'package:alfabet/screen/quiz.dart';
+import 'package:alfabet/screen/alphabet_screen.dart';
+import 'package:alfabet/screen/object_screen.dart';
+import 'package:alfabet/screen/quiz_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
