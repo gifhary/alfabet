@@ -21,7 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
           widget: AlphabetScreen()),
       //menu 1
       MainMenu(
-        title: "Obyek",
+        title: "Objek",
+        assetPath: "asset/img/DButt.jpg",
+        widget: null,
+      ),
+      MainMenu(
+        title: "Kuis",
         assetPath: "asset/img/DButt.jpg",
         widget: null,
       )
