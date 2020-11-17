@@ -1,4 +1,4 @@
-import 'package:alfabet/screen/home.dart';
+import 'package:alfabet/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(Main());
