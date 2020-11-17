@@ -20,6 +20,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
+    //animation time splash screen, change as you wish
     Future.delayed(Duration(milliseconds: 3000), () {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
@@ -32,6 +33,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
+        //gif image as coded animation substitute
         child: Image.asset(
           //TODO place holder
           'asset/img/parrot.gif',
