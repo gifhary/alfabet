@@ -37,7 +37,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
   }
 
   Future<void> _playVoiceOver(String name) async {
-    //_player = await _cache.play('asset/audio/$name.wav');
+    //await _cache.play('asset/audio/$name.wav');
     await _cache.play('audio/g.wav');
   }
 
