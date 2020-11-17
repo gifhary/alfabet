@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       body: Center(
         child: Image.asset(
           //TODO place holder
-          'asset/img/DButt.jpg',
+          'asset/img/parrot.gif',
           height: 45,
         ),
       ),
