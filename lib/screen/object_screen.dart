@@ -9,7 +9,9 @@ class _ObjectScreenState extends State<ObjectScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("KOntol"),
+      body: Center(
+        child: Text("KOntol"),
+      ),
     );
   }
 }

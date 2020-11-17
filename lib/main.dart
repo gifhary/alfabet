@@ -1,4 +1,4 @@
-import 'package:alfabet/screen/home.dart';
+import 'package:alfabet/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(Main());
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
         //gif image as coded animation substitute
         child: Image.asset(
           //TODO place holder
-          'asset/img/parrot.gif',
+          'assets/img/parrot.gif',
           height: 45,
         ),
       ),
