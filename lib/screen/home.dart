@@ -1,5 +1,7 @@
 import 'package:alfabet/constructor/main_menu.dart';
 import 'package:alfabet/screen/alphabet.dart';
+import 'package:alfabet/screen/object.dart';
+import 'package:alfabet/screen/quiz.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,12 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
       MainMenu(
         title: "Objek",
         assetPath: "asset/img/DButt.jpg",
-        widget: null,
+        widget: ObjectScreen(),
       ),
       MainMenu(
         title: "Kuis",
         assetPath: "asset/img/DButt.jpg",
-        widget: null,
+        widget: QuizScreen(),
       )
       //add more menu as you wish
     ];
