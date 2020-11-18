@@ -43,64 +43,72 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-              height: MediaQuery.of(context).size.height,
-              child: Image.asset("assets/img/alphabet_background.gif",
-                  fit: BoxFit.fill)),
-          Center(
-            child: GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-              ),
-              itemCount: _alphabet.length,
-              itemBuilder: (context, index) {
-                final _key = GlobalKey<SpringState>();
-                Random random = new Random();
-                var _color = _colors[random.nextInt(_colors.length)];
+  void dispose() {
+    print("alphabet disposed");
+    super.dispose();
+  }
 
-                return GridTile(
-                    child: GestureDetector(
-                  onTap: () {
-                    _playVoiceOver(_alphabet[index].name);
-                    _key.currentState.animate(motion: Motion.Play);
-                  },
-                  child: Spring(
-                    key: _key,
-                    animType: AnimType.Bubble,
-                    motion: null,
-                    child: Center(
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          ShaderMask(
-                            child: Image.asset("assets/img/balloon.png"),
-                            shaderCallback: (bounds) {
-                              return LinearGradient(
-                                colors: [Colors.blue, _color],
-                                stops: [0.0, 0.0],
-                              ).createShader(bounds);
-                            },
-                            blendMode: BlendMode.srcATop,
-                          ),
-                          Image.asset("assets/img/balloon_fx.png"),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: Text(_alphabet[index].name),
-                          ),
-                        ],
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+                height: MediaQuery.of(context).size.height,
+                child: Image.asset("assets/img/alphabet_background.gif",
+                    fit: BoxFit.fill)),
+            Center(
+              child: GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                ),
+                itemCount: _alphabet.length,
+                itemBuilder: (context, index) {
+                  final _key = GlobalKey<SpringState>();
+                  Random random = new Random();
+                  var _color = _colors[random.nextInt(_colors.length)];
+
+                  return GridTile(
+                      child: GestureDetector(
+                    onTap: () {
+                      _playVoiceOver(_alphabet[index].name);
+                      _key.currentState.animate(motion: Motion.Play);
+                    },
+                    child: Spring(
+                      key: _key,
+                      animType: AnimType.Bubble,
+                      motion: Motion.Play,
+                      child: Center(
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            ShaderMask(
+                              child: Image.asset("assets/img/balloon.png"),
+                              shaderCallback: (bounds) {
+                                return LinearGradient(
+                                  colors: [Colors.blue, _color],
+                                  stops: [0.0, 0.0],
+                                ).createShader(bounds);
+                              },
+                              blendMode: BlendMode.srcATop,
+                            ),
+                            Image.asset("assets/img/balloon_fx.png"),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: Text(_alphabet[index].name),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ));
-              },
+                  ));
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
