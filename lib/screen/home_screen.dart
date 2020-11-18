@@ -52,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          body: Stack(children: [
+          body: Stack(
+        children: [
         Container(
             height: MediaQuery.of(context).size.height,
             //background image home page
