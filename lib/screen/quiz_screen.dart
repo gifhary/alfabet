@@ -43,41 +43,53 @@ class _QuizScreenState extends State<QuizScreen> {
             Container(
               child: Image.asset("assets/img/DButt.jpg"),
             ),
-            Expanded(
-              flex: 1,
-              child: SpringButton(
-                SpringButtonType.OnlyScale,
-                column(
-                  "Increment",
-                  Colors.deepPurpleAccent,
+            Row(
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 7,
+                  width:  MediaQuery.of(context).size.width / 2,
+                  child: Expanded(
+                    flex: 1,
+                    child: SpringButton(
+                      SpringButtonType.OnlyScale,
+                      column(
+                        "Increment",
+                        Colors.deepPurpleAccent,
+                      ),
+                      onTapDown: (_) => print("test"),
+                      onLongPress: () => timer = Timer.periodic(
+                        const Duration(milliseconds: 100),
+                        (_) => print("test"),
+                      ),
+                      onLongPressEnd: (_) {
+                        timer?.cancel();
+                      },
+                    ),
+                  ),
                 ),
-                onTapDown: (_) => print("test"),
-                onLongPress: () => timer = Timer.periodic(
-                  const Duration(milliseconds: 100),
-                  (_) => print("test"),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 7,
+                  width:  MediaQuery.of(context).size.width / 2,
+                  child: Expanded(
+                    flex: 1,
+                    child: SpringButton(
+                      SpringButtonType.OnlyScale,
+                      column(
+                        "Increment",
+                        Colors.deepPurpleAccent,
+                      ),
+                      onTapDown: (_) => print("test"),
+                      onLongPress: () => timer = Timer.periodic(
+                        const Duration(milliseconds: 100),
+                        (_) => print("test"),
+                      ),
+                      onLongPressEnd: (_) {
+                        timer?.cancel();
+                      },
+                    ),
+                  ),
                 ),
-                onLongPressEnd: (_) {
-                  timer?.cancel();
-                },
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: SpringButton(
-                SpringButtonType.OnlyScale,
-                column(
-                  "Increment",
-                  Colors.deepPurpleAccent,
-                ),
-                onTapDown: (_) => print("test"),
-                onLongPress: () => timer = Timer.periodic(
-                  const Duration(milliseconds: 100),
-                  (_) => print("test"),
-                ),
-                onLongPressEnd: (_) {
-                  timer?.cancel();
-                },
-              ),
+              ],
             ),
           ],
         ),
