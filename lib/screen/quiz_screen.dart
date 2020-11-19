@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:spring_button/spring_button.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,18 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   Timer timer;
+  Map<String, List<String>> quizMap = {
+    'DButt': ['DButt', 'Kucing']
+  };
+  
+  
+  
+  
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   Widget column(String text, Color color) {
     return Padding(
@@ -41,13 +54,13 @@ class _QuizScreenState extends State<QuizScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              child: Image.asset("assets/img/DButt.jpg"),
+              child: Image.asset("assets/img/" + quizMap.keys.toString().replaceAll("(\\(\\),)","") + ".jpg"),
             ),
             Row(
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 7,
-                  width:  MediaQuery.of(context).size.width / 2,
+                  width: MediaQuery.of(context).size.width / 2,
                   child: Column(
                     children: [
                       Expanded(
@@ -55,13 +68,13 @@ class _QuizScreenState extends State<QuizScreen> {
                         child: SpringButton(
                           SpringButtonType.OnlyScale,
                           column(
-                            "Increment",
+                            "Anjing",
                             Colors.deepPurpleAccent,
                           ),
-                          onTapDown: (_) => print("test"),
+                          onTapDown: (_) => print(quizMap.keys.toString().replaceAll("(\\(\\))","")),
                           onLongPress: () => timer = Timer.periodic(
                             const Duration(milliseconds: 100),
-                            (_) => print("test"),
+                            (_) => print(""),
                           ),
                           onLongPressEnd: (_) {
                             timer?.cancel();
@@ -73,7 +86,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height / 7,
-                  width:  MediaQuery.of(context).size.width / 2,
+                  width: MediaQuery.of(context).size.width / 2,
                   child: Column(
                     children: [
                       Expanded(
@@ -81,7 +94,7 @@ class _QuizScreenState extends State<QuizScreen> {
                         child: SpringButton(
                           SpringButtonType.OnlyScale,
                           column(
-                            "Increment",
+                            "Kucing",
                             Colors.deepPurpleAccent,
                           ),
                           onTapDown: (_) => print("test"),
