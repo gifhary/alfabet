@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:collection';
-
+import 'package:alfabet/constructor/questions.dart';
+import 'package:alfabet/constructor/quiz_class.dart';
 import 'package:spring_button/spring_button.dart';
 import 'package:flutter/material.dart';
 
@@ -11,12 +12,8 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   Timer timer;
-  Map<String, List<String>> quizMap = {
-    'DButt': ['DButt', 'Kucing']
-  };
-  
-  
-  
+  Questions quizquestions = new Questions();
+
   
 
   @override
@@ -54,7 +51,7 @@ class _QuizScreenState extends State<QuizScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              child: Image.asset("assets/img/" + quizMap.keys.toString().replaceAll("(\\(\\),)","") + ".jpg"),
+              child: Image.asset("assets/img/" + quizquestions.quiz[0].pic + ".jpg"),
             ),
             Row(
               children: [
@@ -71,7 +68,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             "Anjing",
                             Colors.deepPurpleAccent,
                           ),
-                          onTapDown: (_) => print(quizMap.keys.toString().replaceAll("(\\(\\))","")),
+                          onTapDown: (_) => print(quizquestions.quiz[0].pic),
                           onLongPress: () => timer = Timer.periodic(
                             const Duration(milliseconds: 100),
                             (_) => print(""),
