@@ -17,19 +17,18 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
   List _colors = [
     Colors.red,
     Colors.green,
-    Colors.yellow,
-    Colors.blue,
     Colors.purple,
     Colors.cyan,
     Colors.pink,
     Colors.orange,
+    Colors.yellow
   ];
 
   @override
   void initState() {
     for (int i = 0; i < 26; i++) {
       _alphabet.add(ObjectClass(
-          name: String.fromCharCode(97 + i),
+          name: String.fromCharCode(97 + i).toLowerCase(),
           audioAssetPath: "",
           imageAssetPath: ""));
     }
@@ -96,8 +95,11 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                             ),
                             Image.asset("assets/img/balloon_fx.png"),
                             Padding(
-                              padding: const EdgeInsets.only(bottom: 8.0),
-                              child: Text(_alphabet[index].name),
+                              padding: EdgeInsets.only(bottom: 12),
+                              child: Image.asset(
+                                "assets/img/alphabet/a.png",
+                                height: 50,
+                              ),
                             ),
                           ],
                         ),
