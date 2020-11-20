@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
   //Method to load music. PS. Don't put music in any subfolder after assets
   Future loadMusic() async {
     advancedPlayer = await cache.loop("song.mp3");
-    advancedPlayer.setVolume(0.05);
+    advancedPlayer.setVolume(0.07);
 
     // ignore: missing_return
     SystemChannels.lifecycle.setMessageHandler((msg) {

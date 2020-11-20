@@ -51,6 +51,7 @@ flutter:
   assets:
     - assets/img/alphabet/
     - assets/img/
+    - assets/audio/alphabet/
     - assets/audio/
     - assets/
   #   - images/a_dot_ham.jpeg
