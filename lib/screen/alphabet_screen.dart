@@ -95,10 +95,10 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                             ),
                             Image.asset("assets/img/balloon_fx.png"),
                             Padding(
-                              padding: EdgeInsets.only(bottom: 12),
+                              padding: EdgeInsets.only(bottom: 20),
                               child: Image.asset(
                                 "assets/img/alphabet/a.png",
-                                height: 50,
+                                height: 55,
                               ),
                             ),
                           ],
