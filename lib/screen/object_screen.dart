@@ -4,10 +4,6 @@ class ObjectScreen extends StatefulWidget {
   @override
   _ObjectScreenState createState() => _ObjectScreenState();
 }
- List _colors = [
-    Colors.red,
-
-  ];
 
 class _ObjectScreenState extends State<ObjectScreen> {
   @override
@@ -28,7 +24,7 @@ class _ObjectScreenState extends State<ObjectScreen> {
                   alignment: Alignment.center,
                   children: [
                     Image.asset('assets/img/DButt.jpg'),
-                    
+
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
                       

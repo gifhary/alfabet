@@ -19,7 +19,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
     Colors.green,
     Colors.purple,
     Colors.cyan,
-    Colors.pink,
+    Colors.pink,  
     Colors.orange,
     Colors.yellow
   ];
