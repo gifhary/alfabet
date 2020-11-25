@@ -5,6 +5,7 @@ import 'package:alfabet/constructor/questions.dart';
 import 'package:spring_button/spring_button.dart';
 import 'package:flutter/material.dart';
 
+
 class QuizScreen extends StatefulWidget {
   @override
   _QuizScreenState createState() => _QuizScreenState();
@@ -18,6 +19,7 @@ class _QuizScreenState extends State<QuizScreen> {
   var randQuestion;
   var randPosition;
   String correctAnswer, wrongAnswer, pic;
+  int roundcount = 0;
 
   @override
   void initState() {
@@ -29,6 +31,7 @@ class _QuizScreenState extends State<QuizScreen> {
     wrongAnswer = quizquestions.quiz[randQuestion].wrong;
     print(randQuestion);
     print(randPosition);
+    print(roundcount);
   }
 
   Widget column(String text, Color color) {
@@ -59,13 +62,26 @@ class _QuizScreenState extends State<QuizScreen> {
       onWillPop: () async => showDialog(
           context: context,
           builder: (context) => AlertDialog(
-                  title: Text('Apa kamu sudah selesai bermain?'),
+                  backgroundColor: Colors.greenAccent,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                  title: Text('Ingin mengakhiri kuis?'),
                   actions: <Widget>[
                     RaisedButton(
-                        child: Text('YA!'),
+                        splashColor: Colors.yellow,
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)),
+                        child: Text('YA'),
                         onPressed: () => Navigator.of(context).pop(true)),
                     RaisedButton(
-                        child: Text('BELUM!'),
+                        color: Colors.white,
+                        splashColor: Colors.yellow,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                            side: BorderSide(color: Colors.black)),
+                        child: Text('TIDAK'),
                         onPressed: () => Navigator.of(context).pop(false)),
                   ])),
       child: Scaffold(
@@ -160,6 +176,7 @@ class _QuizScreenState extends State<QuizScreen> {
   checkAnswer(String answer) {
     print(answer);
     if (answer == pic) {
+      roundcount++;
       print("benar");
       _cache.play("audio/benar.mp3");
       Navigator.pushReplacement(context,
