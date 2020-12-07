@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:audioplayers/audio_cache.dart';
 import 'dart:math';
 import 'package:alfabet/constructor/questions.dart';
+import 'package:alfabet/widget/transitionAnimation.dart';
 import 'package:spring_button/spring_button.dart';
 import 'package:flutter/material.dart';
 
@@ -180,7 +181,7 @@ class _QuizScreenState extends State<QuizScreen> {
       print("benar");
       _cache.play("audio/benar.mp3");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (BuildContext context) => QuizScreen()));
+          ScaleRoute(page: QuizScreen()));
     } else {
       print("salah");
       _cache.play("audio/salah.mp3");
