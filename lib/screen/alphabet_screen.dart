@@ -97,6 +97,7 @@ class _AlphabetScreenState extends State<AlphabetScreen> {
                             Padding(
                               padding: EdgeInsets.only(bottom: 20),
                               child: Image.asset(
+                                //loop generating alpahabet image based on ObjectClass name
                                 "assets/img/alphabet/${_alphabet[index].name}.png",
                                 height: 55,
                               ),
